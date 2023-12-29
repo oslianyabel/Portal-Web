@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Institucional</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="nav-bar" class="contraido">
+        <img src="img/logo_navbar.svg" alt="Logo de Desoft">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Escribe algo...">
+            <button onclick="search()" id="boton_busqueda">Buscar</button>
+        </div>
+        <ul>
+            <li class="nav_li"><a href="#home">Inicio</a></li>
+            <li class="dropdown nav_li">
+                <a>Sucursales <i class="fas fa-chevron-down"></i> </a>
+                <ul class="dropdown-content">
+                    <li><a onclick="scrollHabana()">Habana</a></li>
+                    <li><a onclick="scrollSSP()">SSP</a></li>
+                    <li><a onclick="scrollSantiago()">Santiago</a></li>
+                </ul>
+            </li>
+            <li class="nav_li"><a onclick="scrollEventos()">Eventos</a></li>
+            <li class="nav_li"><a href="#services-section">Servicios</a></li>
+            <li class="nav_li"><a href="#atencion_cliente">Atención al cliente</a></li>
+        </ul>
+    </nav>
+    <div class="fas fa-bars" id="barras"></div>
+
+    <div class="carrusel-container" id="home">
+        <div class="carrusel">
+            <div class="slide"><img src="img/imagen1.jpg" alt="Imagen 1"></div>
+            <div class="slide"><img src="img/imagen2.jpg" alt="Imagen 2"></div>
+            <div class="slide"><img src="img/imagen3.jpg" alt="Imagen 3"></div>
+            <div class="slide"><img src="img/imagen4.jpg" alt="Imagen 4"></div>
+            <div class="slide"><img src="img/imagen5.jpg" alt="Imagen 5"></div>
+            <div class="slide"><img src="img/imagen6.jpg" alt="Imagen 6"></div>
+            <div class="slide">
+                <video width="640" height="360" controls>
+                    <source src="Ecosistema Digital de Desoft.mp4" type="video/mp4">
+                    Tu navegador no soporta el tag de video.
+                </video>
+            </div>
+        </div>
+
+        <!-- Botones de flecha -->
+        <button class="flecha-izquierda" onclick="cambiarSlide(-1)">&#8249;</button>
+        <button class="flecha-derecha" onclick="cambiarSlide(1)">&#8250;</button>
+    </div>
+
+    <div class="descargas">
+        <button onclick="dossier()">Dossier Corporativo <i class="fas fa-download"></i> </button>
+        <button onclick="marco()">Marco Normativo <i class="fas fa-download"></i> </button>
+        <button onclick="gaceta()">Gaceta oficial <i class="fas fa-link"></i> </button>
+    </div>
+
+    <section class="sucursales">
+        <div class="division" id="div_Habana">
+            <h2>División Territorial La Habana</h2>
+            <ul>
+                <li>Dirección: Calle 24 No 408 e/ 23 y 25 Vedado, Plaza de la Revolución. <br></li>
+                <li>Teléfono: (+53) 7835 6300 <br></li>
+                <li>Email: comercial.habana@desoft.cu <br></li>
+            </ul>
+            <h3>Productos Desarrollados</h3>
+            <div class="productos" id="Habana">
+                <!-- Productos se generan dinámicamente con JavaScript -->
+            </div>
+        </div>
+
+        <div class="separador"><img src="img/valores.svg" alt="Valores"></div>
+
+        <div class="division" id="div_SSP">
+            <h2>División Territorial Sancti Spíritus</h2>
+            <ul>
+                <li>Dirección: Calle Máximo Gómez, No 171 e/ Silvestre Alonso y Frank País <br></li>
+                <li>Teléfono(s): (+53) 4132 7273 extensión 135 <br></li>
+                <li>Email: negocio.ssp@desoft.cu <br></li>
+            </ul>
+            <h3>Productos Desarrollados</h3>
+            <div class="productos" id="SSP">
+                <!-- Productos se generan dinámicamente con JavaScript -->
+            </div>
+        </div>
+
+        <img src="img/cinta3.png" alt="20 años" class="separador">
+        <div class="division" id="div_Santiago">
+            <h2>División Territorial Santiago</h2>
+            <ul>
+                <li>Dirección: Calle 9 s/n e/ A y B Rpto. Santiago de Cuba <br></li>
+                <li>Teléfono(s): (+53) 2264 5412; (+53) 4632 1572 <br></li>
+                <li>Email: clientes.scu@desoft.cu <br></li>
+            </ul>
+            <h3>Productos Desarrollados</h3>
+            <div class="productos" id="Santiago">
+                <!-- Productos se generan dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="seccion_eventos">
+        <h2 id="eventos">Eventos</h2>
+        <div class="event-section">
+            <div class="pagination" id="pagination">
+                <!-- Números de página se generan dinámicamente con JavaScript -->
+            </div>
+            <div class="event-cards" id="event-cards">
+                <!-- Tarjetas de eventos se generan dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <img src="img/cinta1.png" alt="imagen" class="separador" id="services-section">
+    <section id="seccion_servicios">
+        <div class="servicios">
+            <div class="servicio" onclick="mostrarInformacion('servicio1')">
+                <img src="img/servicio1.png" alt="servicio 1">
+            </div>
+            <div class="servicio" onclick="mostrarInformacion('servicio2')">
+                <img src="img/servicio2.png" alt="servicio 2">
+            </div>
+            <div class="servicio" onclick="mostrarInformacion('servicio3')">
+                <img src="img/servicio3.png" alt="servicio 3">
+            </div>
+            <div class="servicio" onclick="mostrarInformacion('servicio4')">
+                <img src="img/servicio4.png" alt="servicio 4">
+            </div>
+        </div>
+
+        <div class="informacion" id="servicio1">
+            <h2>Gestión Empresarial y de Gobierno</h2>
+            <p>Soluciones tecnológicas alineadas a las principales tendencias internacionales en este ámbito y el
+                desarrollo de la industria 4.0.</p>
+        </div>
+
+        <div class="informacion" id="servicio2">
+            <h2>Gobierno electrónico</h2>
+            <p>Desoft provee soluciones tecnológicas que facilitan el intercambio gobierno-ciudadano, contribuyendo al
+                acceso oportuno e inclusivo a la información.</p>
+        </div>
+
+        <div class="informacion" id="servicio3">
+            <h2>Servicios sobre plataformas digitales</h2>
+            <p>Soluciones tecnológicas para el posicionamiento del Cliente en entornos digitales y el desarrollo del
+                marketing digital.</p>
+        </div>
+
+        <div class="informacion" id="servicio4">
+            <h2>Proyectos de informatización</h2>
+            <p>DESOFT participa en Proyectos de Informatización aportando herramientas esenciales para el avance de la
+                sociedad cubana y el bienestar ciudadano.</p>
+        </div>
+
+        <div class="formulario">
+            <h2>Solicitar Servicio</h2>
+            <form onsubmit="enviarSolicitud(); return false;" class="form">
+                <div class="flex-item">
+                    <label for="servicio">Selecciona un servicio:</label>
+                    <select id="servicio" name="servicio">
+                        <option value="servicio1">Gestión Empresarial y de Gobierno</option>
+                        <option value="servicio2">Gobierno electrónico</option>
+                        <option value="servicio3">Servicios sobre plataformas digitales</option>
+                        <option value="servicio4">Proyectos de informatización</option>
+                    </select>
+                </div>
+                <div class="flex-item">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="flex-item">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+                </div>
+                <button type="submit">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="atencion_cliente">
+        <form id="formularioAtencion" onsubmit="enviarSolicitud2(); return false;">
+            <h2 class="flex-item">Formulario de Atención al Ciudadano</h2>
+
+            <div class="flex-item">
+                <label for="fechaPlanteamiento">Fecha del Planteamiento:</label>
+                <input type="date" id="fechaPlanteamiento" name="fechaPlanteamiento" required><br>
+            </div>
+            <div class="flex-item">
+                <label for="tipoPlanteamiento">Tipo de Planteamiento:</label>
+                <select id="tipoPlanteamiento" name="tipoPlanteamiento" onchange="mostrarCampos()">
+                    <option value="comentario">Comentario</option>
+                    <option value="queja">Queja</option>
+                </select><br>
+            </div>
+            <div id="camposComentario" class="flex-item">
+                <label for="comentario">Comentario:</label>
+                <textarea id="comentario" name="comentario"></textarea><br>
+            </div>
+            <div id="camposQueja" class="hidden" class="flex-item">
+                <label for="tipoQueja">Tipo de Queja:</label>
+                <select id="tipoQueja" name="tipoQueja" onchange="mostrarCampos2()">
+                    <option value="personal">Personal</option>
+                    <option value="anonima">Anónima</option>
+                </select><br>
+
+                <label for="nombre">Nombre y Apellidos:</label>
+                <input type="text" id="nombre" name="nombre"><br>
+
+                <label for="direccion">Dirección Particular:</label>
+                <input type="text" id="direccion" name="direccion"><br>
+
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="email" name="email"><br>
+
+                <label for="telefono">Teléfono de Contacto:</label>
+                <input type="tel" id="telefono" name="telefono"><br>
+
+                <label for="planteamiento">Planteamiento:</label>
+                <textarea id="planteamiento" name="planteamiento"></textarea><br>
+            </div>
+            <button type="submit" class="flex-item">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Ultima Actualización: 28 de diciembre del 2023</p>
+
+        <h3>Redes Sociales</h3>
+        <div class="redes_sociales">
+            <a href="https://www.facebook.com/DesoftCuba" class="red_social"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/desoft_empresa" class="red_social"><i class="fab fa-twitter"> </i></a>
+            <a href="https://www.instagram.com/desoftempresa/" class="red_social"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCJV9sKqZCYxAlFNpmzBvE9A" class="red_social"><i
+                    class="fab fa-youtube"></i></a>
+        </div>
+
+        <h3>Contacto</h3>
+        <div class="contacto">
+            <p><i class="fas fa-envelope"></i> negocios@desoft.cu</p>
+            <p><i class="fas fa-phone"></i> (+53)78383084</p>
+            <br>
+        </div>
+        <p>Desoft © 2023 Todos los derechos reservados</p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/cea45a68f0.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="productos.js"></script>
+    <script src="eventos.js"></script>
+</body>
+</html>
