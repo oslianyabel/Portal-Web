@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Institucional</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font-awesome/css/all.css">
 </head>
 
 <body>
@@ -186,41 +187,54 @@
             <h2 class="flex-item">Formulario de Atención al Ciudadano</h2>
 
             <div class="flex-item">
-                <label for="fechaPlanteamiento">Fecha del Planteamiento:</label>
+                <label for="fechaPlanteamiento">Fecha del Planteamiento</label>
                 <input type="date" id="fechaPlanteamiento" name="fechaPlanteamiento" required><br>
             </div>
             <div class="flex-item">
-                <label for="tipoPlanteamiento">Tipo de Planteamiento:</label>
+                <label for="tipoPlanteamiento">Tipo de Planteamiento</label>
                 <select id="tipoPlanteamiento" name="tipoPlanteamiento" onchange="mostrarCampos()">
                     <option value="comentario">Comentario</option>
                     <option value="queja">Queja</option>
                 </select><br>
             </div>
             <div id="camposComentario" class="flex-item">
-                <label for="comentario">Comentario:</label>
-                <textarea id="comentario" name="comentario"></textarea><br>
+                <div class="text-area">
+                    <label for="comentario">Comentario</label>
+                    <textarea id="comentario" name="comentario"></textarea><br>
+                </div>
             </div>
             <div id="camposQueja" class="hidden" class="flex-item">
-                <label for="tipoQueja">Tipo de Queja:</label>
-                <select id="tipoQueja" name="tipoQueja" onchange="mostrarCampos2()">
-                    <option value="personal">Personal</option>
-                    <option value="anonima">Anónima</option>
-                </select><br>
+                <div class="flex-item">
+                    <label for="tipoQueja">Tipo de Queja</label>
+                    <select id="tipoQueja" name="tipoQueja" onchange="mostrarCampos2()">
+                        <option value="personal">Personal</option>
+                        <option value="anonima">Anónima</option>
+                    </select><br>
+                </div>
 
-                <label for="nombre">Nombre y Apellidos:</label>
-                <input type="text" id="nombre" name="nombre"><br>
+                <div class="flex-item">
+                    <label for="nombre">Nombre y Apellidos</label>
+                    <input type="text" id="nombre" name="nombre"><br>
+                </div>
 
-                <label for="direccion">Dirección Particular:</label>
-                <input type="text" id="direccion" name="direccion"><br>
+                <div class="flex-item">
+                    <label for="direccion">Dirección Particular</label>
+                    <input type="text" id="direccion" name="direccion"><br>
+                </div>
 
-                <label for="correo">Correo Electrónico:</label>
-                <input type="email" id="email" name="email"><br>
+                <div class="flex-item">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="email" name="email"><br>
+                </div>
 
-                <label for="telefono">Teléfono de Contacto:</label>
-                <input type="tel" id="telefono" name="telefono"><br>
-
-                <label for="planteamiento">Planteamiento:</label>
-                <textarea id="planteamiento" name="planteamiento"></textarea><br>
+                <div class="flex-item">
+                    <label for="telefono">Teléfono de Contacto</label>
+                    <input type="tel" id="telefono" name="telefono"><br> 
+                </div>
+                <div class="text-area flex-item">
+                    <label for="planteamiento">Planteamiento</label>
+                    <textarea id="planteamiento" name="planteamiento"></textarea><br>
+                </div>
             </div>
             <button type="submit" class="flex-item">Enviar</button>
         </form>
@@ -248,7 +262,6 @@
         <p>Desoft © 2023 Todos los derechos reservados</p>
     </footer>
 
-    <script src="https://kit.fontawesome.com/cea45a68f0.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <script src="productos.js"></script>
     <script src="eventos.js"></script>

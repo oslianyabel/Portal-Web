@@ -299,7 +299,12 @@ document.addEventListener("click", (event)=>{
         barras.click();
 })
 
+//boton de buscar
 function search() {
+    const busqueda = document.querySelector("#searchInput").value.toLowerCase();
+    if(busqueda.trim() === '')
+        return;
+    document.querySelector('#boton_busqueda').blur();
     let mediaQuery = window.matchMedia('(max-width: 768px)');
     if(mediaQuery.matches)
         search_mobile();
@@ -326,7 +331,7 @@ function search_pc(){
             dfs(children[i], busqueda);
         }
     }
-    alert("Se encontraron "+marks.length+" coincidencias. Presione Enter para cambiar o Esc para desmarcar");
+    alert("Se encontraron "+marks.length+" coincidencias. Presione Enter para ir hacia otro resultado");
 }
 
 function dfs(element, busqueda){
@@ -375,4 +380,10 @@ document.addEventListener('keydown', (event)=> {
         if(event.key === 'Escape')
             uncheck();
     }
+});
+
+document.addEventListener('click', (event)=>{
+    const boton = document.querySelector('#boton_busqueda');
+    if(!boton.contains(event.target) && marks.length != 0)
+        uncheck();
 });

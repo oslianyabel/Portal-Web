@@ -46,6 +46,17 @@ color: #000;
 font-weight: bold;
 }
 
+button {
+cursor: pointer;
+}
+
+textarea {
+resize: none;
+overflow: hidden;
+width: 300px;
+height: 100px;
+}
+
 nav {
 background-color: #333;
 color: #fff;
@@ -57,6 +68,7 @@ position: fixed;
 width: 100%;
 top: 0;
 z-index: 100;
+cursor: pointer;
 }
 
 nav img {
@@ -455,8 +467,21 @@ flex-direction: column;
 align-items: center;
 }
 
+.text-area {
+display: flex;
+align-items: center;
+}
+
+.text-area > * {
+    margin: 0 5px;
+}
+
 .flex-item {
 margin: 5px;
+}
+
+input {
+    width: 250px;
 }
 
 #barras {
@@ -464,7 +489,7 @@ display: none;
 }
 
 .mark {
-    outline: var(--secondary-color) solid 2px;
+outline: var(--secondary-color) solid 2px;
 }
 
 
