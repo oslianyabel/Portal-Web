@@ -173,7 +173,7 @@
                     <label for="correo">Correo electrónico:</label>
                     <input type="email" id="correo" name="correo" required>
                 </div>
-                <div class="flex-item">
+                <div class="flex-item text-area">
                     <label for="mensaje">Mensaje:</label>
                     <textarea id="mensaje" name="mensaje" required></textarea>
                 </div>
@@ -183,14 +183,14 @@
     </section>
 
     <section id="atencion_cliente">
-        <form id="formularioAtencion" onsubmit="enviarSolicitud2(); return false;">
+        <form id="formularioAtencion" class="flex-container-column" onsubmit="enviarSolicitud2(); return false;">
             <h2 class="flex-item">Formulario de Atención al Ciudadano</h2>
 
-            <div class="flex-item">
+            <div class="flex-item flex-container-row">
                 <label for="fechaPlanteamiento">Fecha del Planteamiento</label>
                 <input type="date" id="fechaPlanteamiento" name="fechaPlanteamiento" required><br>
             </div>
-            <div class="flex-item">
+            <div class="flex-item flex-container-row">
                 <label for="tipoPlanteamiento">Tipo de Planteamiento</label>
                 <select id="tipoPlanteamiento" name="tipoPlanteamiento" onchange="mostrarCampos()">
                     <option value="comentario">Comentario</option>
@@ -203,8 +203,8 @@
                     <textarea id="comentario" name="comentario"></textarea><br>
                 </div>
             </div>
-            <div id="camposQueja" class="hidden" class="flex-item">
-                <div class="flex-item">
+            <div id="camposQueja" class="flex-item flex-container-column">
+                <div class="flex-item flex-container-row">
                     <label for="tipoQueja">Tipo de Queja</label>
                     <select id="tipoQueja" name="tipoQueja" onchange="mostrarCampos2()">
                         <option value="personal">Personal</option>
@@ -212,24 +212,24 @@
                     </select><br>
                 </div>
 
-                <div class="flex-item">
+                <div class="flex-item flex-container-row">
                     <label for="nombre">Nombre y Apellidos</label>
                     <input type="text" id="nombre" name="nombre"><br>
                 </div>
 
-                <div class="flex-item">
+                <div class="flex-item flex-container-row">
                     <label for="direccion">Dirección Particular</label>
                     <input type="text" id="direccion" name="direccion"><br>
                 </div>
 
-                <div class="flex-item">
-                    <label for="correo">Correo Electrónico</label>
+                <div class="flex-item flex-container-row">
+                    <label for="email">Correo Electrónico</label>
                     <input type="email" id="email" name="email"><br>
                 </div>
 
-                <div class="flex-item">
+                <div class="flex-item flex-container-row">
                     <label for="telefono">Teléfono de Contacto</label>
-                    <input type="tel" id="telefono" name="telefono"><br> 
+                    <input type="tel" id="telefono" name="telefono"><br>
                 </div>
                 <div class="text-area flex-item">
                     <label for="planteamiento">Planteamiento</label>
@@ -266,4 +266,5 @@
     <script src="productos.js"></script>
     <script src="eventos.js"></script>
 </body>
+
 </html>

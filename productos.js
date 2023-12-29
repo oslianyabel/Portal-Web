@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Obtener el contenedor de productos
     const contenedorProductos1 = document.querySelector("#Habana");
   
-    // Simular la carga del archivo JSON (puedes cargarlo desde una URL en una aplicación real)
     fetch("json/Habana.json")
       .then(response => response.json())
       .then(data => {
@@ -31,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("json/SSP.json")
       .then(response => response.json())
       .then(data => {
-        // Iterar sobre la lista de productos y crear elementos HTML
         data.productos.forEach(producto => {
           const productoElemento = document.createElement("div");
           productoElemento.classList.add("producto");
@@ -48,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p class="precio"><strong>Precio:</strong> ${producto.precio}</p>
             </div>
           `;
-          // Agregar el producto al contenedor
           contenedorProductos2.appendChild(productoElemento);
         });
       })
@@ -58,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
       fetch("json/Santiago.json")
       .then(response => response.json())
       .then(data => {
-        // Iterar sobre la lista de productos y crear elementos HTML
         data.productos.forEach(producto => {
           const productoElemento = document.createElement("div");
           productoElemento.classList.add("producto");
@@ -75,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p class="precio"><strong>Precio:</strong> ${producto.precio}</p>
             </div>
           `;
-          // Agregar el producto al contenedor
           contenedorProductos3.appendChild(productoElemento);
         });
       })

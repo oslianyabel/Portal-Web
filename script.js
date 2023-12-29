@@ -214,13 +214,17 @@ function mostrarCampos() {
     const tipoPlanteamiento = document.getElementById('tipoPlanteamiento').value;
     const camposComentario = document.getElementById('camposComentario');
     const camposQueja = document.getElementById('camposQueja');
+    let mediaQuery = window.matchMedia('(max-width: 768px)');
 
     if (tipoPlanteamiento === 'comentario') {
-        camposComentario.classList.remove('hidden');
-        camposQueja.classList.add('hidden');
+        camposQueja.style.display = 'none';
+        if(mediaQuery.matches)
+            camposComentario.style.display = 'flex';
+        else
+            camposComentario.style.display = 'block';
     } else {
-        camposComentario.classList.add('hidden');
-        camposQueja.classList.remove('hidden');
+        camposComentario.style.display = 'none';
+        camposQueja.style.display = 'block';
     }
 }
 
@@ -232,15 +236,15 @@ function mostrarCampos2() {
     const telefono = document.getElementById('telefono');
 
     if (tipoPlanteamiento === 'anonima') {
-        nombre.classList.add('hidden');
-        direccion.classList.add('hidden');
-        email.classList.add('hidden');
-        telefono.classList.add('hidden');
+        nombre.style.display = 'none';
+        direccion.style.display = 'none';
+        email.style.display = 'none';
+        telefono.style.display = 'none';
     } else {
-        nombre.classList.remove('hidden');
-        direccion.classList.remove('hidden');
-        email.classList.remove('hidden');
-        telefono.classList.remove('hidden');
+        nombre.style.display = 'inline';
+        direccion.style.display = 'inline';
+        email.style.display = 'inline';
+        telefono.style.display = 'inline';
     }
 }
 
@@ -254,7 +258,12 @@ function enviarSolicitud2() {
     const email = document.getElementById('email').value;
     const telefono = document.getElementById('telefono').value;
     const planteamiento = document.getElementById('planteamiento').value;
+    let regexTelefono = /^\d{8}$/;
 
+    if(!regexTelefono.test(telefono) && tipoPlanteamiento != 'comentario' && tipoQueja != 'anonima'){
+        alert('Número de teléfono incorrecto.');
+        return;
+    }
     if(tipoPlanteamiento === 'comentario' && comentario!=''){
         alert('Formulario enviado correctamente.');
         return;
@@ -271,7 +280,6 @@ function enviarSolicitud2() {
     }
 
     alert('Faltan campos por llenar.');
-    return;
 }
 
 mostrarCampos();
@@ -364,13 +372,13 @@ function uncheck() {
 }
 
 function change_result(){
+    if(++indice == marks.length)
+        indice = 0;
+
     marks[indice].scrollIntoView({
         behavior: 'smooth',
         block: 'center'
     });
-    indice = indice + 1;
-    if(indice == marks.length)
-        indice = 0;
 }
 
 document.addEventListener('keydown', (event)=> {
