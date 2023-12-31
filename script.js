@@ -85,88 +85,6 @@ function enviarSolicitud() {
     alert('Solicitud enviada correctamente.');
 }
 
-//motor de busqueda mobile
-function search_mobile(){
-    const body = document.body.innerText.toLowerCase();
-    const nav = document.querySelector("#nav-bar");
-    const descargas = document.querySelector(".descargas");
-    const habana = document.querySelector("#div_Habana");
-    const ssp = document.querySelector("#div_SSP");
-    const santiago = document.querySelector("#div_Santiago");
-    const eventos = document.querySelector("#seccion_eventos");
-    const servicios = document.querySelector("#seccion_servicios");
-    const atencion = document.querySelector("#atencion_cliente");
-    const footer = document.querySelector("footer");
-    const busqueda = document.querySelector("#searchInput").value.toLowerCase();
-    
-    if(!body.includes(busqueda))
-        alert("No se encontraron coincidencias");
-    else if(descargas.innerText.toLowerCase().includes(busqueda)){
-            descargas.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'       
-            });
-            alert("Coincidencias encontradas en botones de portada");
-          }
-            else if(nav.innerText.toLowerCase().includes(busqueda)){
-                descargas.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'end'       
-                });
-                alert("Coincidencias encontradas en barra de navegación");
-            }
-                else if(habana.innerText.toLowerCase().includes(busqueda)){
-                    habana.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'       
-                    });
-                    alert("Coincidencias encontradas en sucursal Habana");
-                }
-                    else if(ssp.innerText.toLowerCase().includes(busqueda)){
-                        ssp.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center'       
-                        });
-                        alert("Coincidencias encontradas en sucursal Sancti Spíritus");
-                    }
-                        else if(santiago.innerText.toLowerCase().includes(busqueda)){
-                            santiago.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'center'       
-                            });
-                            alert("Coincidencias encontradas en sucursal Santiago");
-                        }
-                            else if(eventos.innerText.toLowerCase().includes(busqueda)){
-                                eventos.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'center'       
-                                });
-                                alert("Coincidencias encontradas en Eventos");
-                            }
-                                else if(servicios.innerText.toLowerCase().includes(busqueda)){
-                                    servicios.scrollIntoView({
-                                        behavior: 'smooth',
-                                        block: 'center'       
-                                    });
-                                    alert("Coincidencias encontradas en Servicios");
-                                }
-                                    else if(atencion.innerText.toLowerCase().includes(busqueda)){
-                                        atencion.scrollIntoView({
-                                            behavior: 'smooth',
-                                            block: 'center'       
-                                        });
-                                        alert("Coincidencias encontradas en Atención al Cliente");
-                                    }
-                                        else if(footer.innerText.toLowerCase().includes(busqueda)){
-                                            footer.scrollIntoView({
-                                                behavior: 'smooth',
-                                                block: 'center'       
-                                            });
-                                            alert("Coincidencias encontradas en el footer");
-                                        }
-        
-}
-
 //funciones para hacer scrolls hacia el centro de los elementos
 function scrollHabana(){
     const habana = document.querySelector("#div_Habana h2");
@@ -285,10 +203,11 @@ function enviarSolicitud2() {
 mostrarCampos();
 mostrarCampos2();
 
-//expandir y contraer nav-bar mobile
 const barras = document.querySelector("#barras");
 const nav_bar = document.querySelector("#nav-bar");
-barras.addEventListener("click", ()=>{
+
+//expandir y contraer nav-bar mobile
+function click_barras() {
     if (nav_bar.classList.contains('contraido')){
         nav_bar.style.transform = 'translateY(0%)';
         nav_bar.classList.remove('contraido');
@@ -297,37 +216,31 @@ barras.addEventListener("click", ()=>{
         nav_bar.style.transform = 'translateY(-100%)';
         nav_bar.classList.add('contraido');
     }
-});
+}
 
-//clicks fuera del nav-bar mobile lo contraen
+barras.addEventListener("click", click_barras);
+
+//contraer nav-bar mobile
 document.addEventListener("click", (event)=>{
     const searchInput = document.querySelector("#searchInput");
     let mediaQuery = window.matchMedia('(max-width: 768px)');
-    if(mediaQuery.matches && !dropdown.contains(event.target) && barras!=event.target && !nav_bar.classList.contains('contraido') && !searchInput.contains(event.target))
-        barras.click();
+    if(mediaQuery.matches && !dropdown.contains(event.target) && barras != event.target && !nav_bar.classList.contains('contraido') && !searchInput.contains(event.target))
+        click_barras();
 })
 
-//boton de buscar
+let marks, indice, flag;
+
+//motor de busqueda
 function search() {
     const busqueda = document.querySelector("#searchInput").value.toLowerCase();
     if(busqueda.trim() === '')
         return;
+
     document.querySelector('#boton_busqueda').blur();
-    let mediaQuery = window.matchMedia('(max-width: 768px)');
-    if(mediaQuery.matches)
-        search_mobile();
-    else
-        search_pc();
-}
 
-let marks, indice, flag;
-
-//motor de busqueda en pc
-function search_pc(){
     marks = [];
     indice = 0;
     flag = true;
-    const busqueda = document.querySelector("#searchInput").value.toLowerCase();
     const body = document.body;
     if(!body.innerText.toLowerCase().includes(busqueda)){
         alert("No se encontraron coincidencias");
@@ -342,6 +255,7 @@ function search_pc(){
     alert("Se encontraron "+marks.length+" coincidencias. Presione Enter para ir hacia otro resultado");
 }
 
+//Búsqueda en profundidad
 function dfs(element, busqueda){
     const children = Array.from(element.children);
     if(children.length === 0){
@@ -362,6 +276,7 @@ function dfs(element, busqueda){
     }
 }
 
+//desmarcar resultados de búsqueda
 function uncheck() {
     let results = document.querySelectorAll('.mark');
     results.forEach(result => {
@@ -371,6 +286,7 @@ function uncheck() {
     indice = 0;
 }
 
+//cambiar resultado de búsqueda
 function change_result(){
     if(++indice == marks.length)
         indice = 0;
@@ -381,6 +297,7 @@ function change_result(){
     });
 }
 
+//desmarcar o iterar resultados de búsqueda al presionar Enter o Esc
 document.addEventListener('keydown', (event)=> {
     if(marks.length != 0) {
         if (event.key === 'Enter')
@@ -390,7 +307,8 @@ document.addEventListener('keydown', (event)=> {
     }
 });
 
-document.addEventListener('click', (event)=>{
+//desmarcar resultados de búsqueda al hacer click en la pantalla
+document.addEventListener('click', (event)=> {
     const boton = document.querySelector('#boton_busqueda');
     if(!boton.contains(event.target) && marks.length != 0)
         uncheck();
