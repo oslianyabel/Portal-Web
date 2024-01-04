@@ -256,7 +256,7 @@ function search() {
 }
 
 //Búsqueda en profundidad
-function dfs(element, busqueda){
+function dfs(element, busqueda) {
     const children = Array.from(element.children);
     if(children.length === 0){
         if(flag)
