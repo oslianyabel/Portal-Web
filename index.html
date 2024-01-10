@@ -18,14 +18,6 @@
         </div>
         <ul>
             <li class="nav_li"><a href="#home">Inicio</a></li>
-            <li class="dropdown nav_li">
-                <a>Sucursales <i class="fas fa-chevron-down"></i> </a>
-                <ul class="dropdown-content">
-                    <li><a onclick="scrollHabana()">Habana</a></li>
-                    <li><a onclick="scrollSSP()">SSP</a></li>
-                    <li><a onclick="scrollSantiago()">Santiago</a></li>
-                </ul>
-            </li>
             <li class="nav_li"><a onclick="scrollEventos()">Eventos</a></li>
             <li class="nav_li"><a href="#services-section">Servicios</a></li>
             <li class="nav_li"><a href="#atencion_cliente">Atención al cliente</a></li>
@@ -60,49 +52,14 @@
         <button onclick="gaceta()">Gaceta oficial <i class="fas fa-link"></i> </button>
     </div>
 
-    <section class="sucursales">
-        <div class="division" id="div_Habana">
-            <h2>División Territorial La Habana</h2>
-            <ul>
-                <li>Dirección: Calle 24 No 408 e/ 23 y 25 Vedado, Plaza de la Revolución. <br></li>
-                <li>Teléfono: (+53) 7835 6300 <br></li>
-                <li>Email: comercial.habana@desoft.cu <br></li>
-            </ul>
-            <h3>Productos Desarrollados</h3>
-            <div class="productos" id="Habana">
-                <!-- Productos se generan dinámicamente con JavaScript -->
-            </div>
-        </div>
-
-        <div class="separador"><img src="img/valores.svg" alt="Valores"></div>
-
-        <div class="division" id="div_SSP">
-            <h2>División Territorial Sancti Spíritus</h2>
-            <ul>
-                <li>Dirección: Calle Máximo Gómez, No 171 e/ Silvestre Alonso y Frank País <br></li>
-                <li>Teléfono(s): (+53) 4132 7273 extensión 135 <br></li>
-                <li>Email: negocio.ssp@desoft.cu <br></li>
-            </ul>
-            <h3>Productos Desarrollados</h3>
-            <div class="productos" id="SSP">
-                <!-- Productos se generan dinámicamente con JavaScript -->
-            </div>
-        </div>
-
-        <img src="img/cinta3.png" alt="20 años" class="separador">
-        <div class="division" id="div_Santiago">
-            <h2>División Territorial Santiago</h2>
-            <ul>
-                <li>Dirección: Calle 9 s/n e/ A y B Rpto. Santiago de Cuba <br></li>
-                <li>Teléfono(s): (+53) 2264 5412; (+53) 4632 1572 <br></li>
-                <li>Email: clientes.scu@desoft.cu <br></li>
-            </ul>
-            <h3>Productos Desarrollados</h3>
-            <div class="productos" id="Santiago">
-                <!-- Productos se generan dinámicamente con JavaScript -->
-            </div>
+    <section id="products_section">
+        <h2>Productos</h2>
+        <div id="productos">
+            <!-- Los productos se generan dinámicamente con JavaScript -->
         </div>
     </section>
+
+    <div class="separador"><img src="img/valores.svg" alt="Valores"></div>
 
     <section id="seccion_eventos">
         <h2 id="eventos">Eventos</h2>
@@ -239,6 +196,8 @@
             <button type="submit" class="flex-item">Enviar</button>
         </form>
     </section>
+
+    <img src="img/cinta3.png" alt="20 años" class="separador">
 
     <footer>
         <p>Ultima Actualización: 28 de diciembre del 2023</p>

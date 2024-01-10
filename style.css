@@ -293,16 +293,16 @@ font-size: 14px;
 background-color: #e71113;
 }
 
-.productos {
+#productos {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 }
 
-.division h2 {
+#products_section h2 {
 margin: 10px;
 }
 
-.division h3 {
+#products_section h3 {
 text-align: center;
 }
 
@@ -557,7 +557,7 @@ position: static;
 display: none;
 }
 
-.productos {
+#productos {
 display: flex;
 flex-direction: column;
 }

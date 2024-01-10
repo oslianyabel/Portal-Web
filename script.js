@@ -86,31 +86,9 @@ function enviarSolicitud() {
 }
 
 //funciones para hacer scrolls hacia el centro de los elementos
-function scrollHabana(){
-    const habana = document.querySelector("#div_Habana h2");
-    habana.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'       
-    });
-    let mediaQuery = window.matchMedia('(max-width: 768px)');
-    if(mediaQuery.matches)
-        barras.click();
-}
-
-function scrollSSP(){
-    const ssp = document.querySelector("#div_SSP h2");
-    ssp.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'       
-    });
-    let mediaQuery = window.matchMedia('(max-width: 768px)');
-    if(mediaQuery.matches)
-        barras.click();
-}
-
-function scrollSantiago(){
-    const santiago = document.querySelector("#div_Santiago h2");
-    santiago.scrollIntoView({
+function scrollProductos(){
+    const productos = document.querySelector("#products_section h2");
+    productos.scrollIntoView({
         behavior: 'smooth',
         block: 'center'       
     });
