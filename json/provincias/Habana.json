@@ -1,0 +1,40 @@
+{
+  "productos": [
+    {
+      "titulo": "Segurmatica Antivirus",
+      "descripcion": "Software antivirus, desarrollado por la empresa Segurmatica, orientado a la proteccion contra el accionar de los programas malignos en sistemas operativos de Microsoft Windows.",
+      "precio": "$19.99",
+      "categoria": "seguridad"
+    },
+    {
+      "titulo": "BIMAS",
+      "descripcion": "El Sistema Ejecutivo para el Seguimiento a Estrategias Organizacionales, BIMAS, gestiona el Mapa Estrategico de una organizacion a traves de un Cuadro de Mando Integral propio.",
+      "precio": "$24.99",
+      "categoria": "estrategia"
+    },
+    {
+      "titulo": "EnerguX",
+      "descripcion": "Sistema para la gestion y control de los portadores energeticos incluyendo energia electrica y sus equipos de respaldo, lubricantes, combustibles y sus indices de consumo en los equipos, gas y agua.",
+      "precio": "$29.99",
+      "categoria": "economia"
+    },
+    {
+      "titulo": "Fastos",
+      "descripcion": "Solucion integral para la gestion de recursos humanos que automatiza las informaciones basicas del expediente laboral y permite el control de procesos y operaciones inherentes al area.",
+      "precio": "$14.99",
+      "categoria": "capital_humano"
+    },
+    {
+      "titulo": "SARCIO",
+      "descripcion": "Sistema informatico para el control automatizado de los documentos ordinarios, clasificados y limitados en cualquier entidad.",
+      "precio": "$34.99",
+      "categoria": "informacion"
+    },
+    {
+      "titulo": "Gestion de Recursos Hidricos",
+      "descripcion": "La Suite de aplicaciones para la gestion de los recursos hidricos es un Sistema para el control, uso y manejo sostenible de las aguas terrestres.",
+      "precio": "$39.99",
+      "categoria": "integral"
+    }
+  ]
+}

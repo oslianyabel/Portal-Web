@@ -5,225 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Institucional</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="font-awesome/css/all.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
 <body>
-    <nav id="nav-bar" class="contraido">
-        <img src="img/logo_navbar.svg" alt="Logo de Desoft">
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Escribe algo...">
-            <button onclick="search()" id="boton_busqueda">Buscar</button>
-        </div>
-        <ul>
-            <li class="nav_li"><a href="#home">Inicio</a></li>
-            <li class="nav_li"><a onclick="scrollEventos()">Eventos</a></li>
-            <li class="nav_li"><a href="#services-section">Servicios</a></li>
-            <li class="nav_li"><a href="#atencion_cliente">Atención al cliente</a></li>
-        </ul>
-    </nav>
-    <div class="fas fa-bars" id="barras"></div>
+    <div class="container-fluid ps-md-0">
+        <div class="row g-0">
+            <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+            <div class="col-md-8 col-lg-6">
+                <div class="login d-flex align-items-center py-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9 col-lg-8 mx-auto">
+                                <h3 class="login-heading mb-4">Bienvenido!</h3>
 
-    <div class="carrusel-container" id="home">
-        <div class="carrusel">
-            <div class="slide"><img src="img/imagen1.jpg" alt="Imagen 1"></div>
-            <div class="slide"><img src="img/imagen2.jpg" alt="Imagen 2"></div>
-            <div class="slide"><img src="img/imagen3.jpg" alt="Imagen 3"></div>
-            <div class="slide"><img src="img/imagen4.jpg" alt="Imagen 4"></div>
-            <div class="slide"><img src="img/imagen5.jpg" alt="Imagen 5"></div>
-            <div class="slide"><img src="img/imagen6.jpg" alt="Imagen 6"></div>
-            <div class="slide">
-                <video width="640" height="360" controls>
-                    <source src="Ecosistema Digital de Desoft.mp4" type="video/mp4">
-                    Tu navegador no soporta el tag de video.
-                </video>
+                                <!-- Sign In Form -->
+                                <form>
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="floatingInput"
+                                            placeholder="name@example.com">
+                                        <label for="floatingInput">Correo</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="password" class="form-control" id="floatingPassword"
+                                            placeholder="Password">
+                                        <label for="floatingPassword">Contraseña</label>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            id="rememberPasswordCheck">
+                                        <label class="form-check-label" for="rememberPasswordCheck">
+                                            Recordar Contraseña
+                                        </label>
+                                    </div>
+
+                                    <div class="d-grid">
+                                        <button onclick="login()"
+                                            class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2"
+                                            type="submit">Iniciar Sesión</button>
+                                        <div class="text-center">
+                                            <a class="small" href="portal.html">Olvidaste tu contraseña?</a>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Botones de flecha -->
-        <button class="flecha-izquierda" onclick="cambiarSlide(-1)">&#8249;</button>
-        <button class="flecha-derecha" onclick="cambiarSlide(1)">&#8250;</button>
     </div>
 
-    <div class="descargas">
-        <button onclick="dossier()">Dossier Corporativo <i class="fas fa-download"></i> </button>
-        <button onclick="marco()">Marco Normativo <i class="fas fa-download"></i> </button>
-        <button onclick="gaceta()">Gaceta oficial <i class="fas fa-link"></i> </button>
-    </div>
+    <script src="js/login.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 
-    <section id="products_section">
-        <h2>Productos</h2>
-        <div id="productos">
-            <!-- Los productos se generan dinámicamente con JavaScript -->
-        </div>
-    </section>
-
-    <div class="separador"><img src="img/valores.svg" alt="Valores"></div>
-
-    <section id="seccion_eventos">
-        <h2 id="eventos">Eventos</h2>
-        <div class="event-section">
-            <div class="pagination" id="pagination">
-                <!-- Números de página se generan dinámicamente con JavaScript -->
-            </div>
-            <div class="event-cards" id="event-cards">
-                <!-- Tarjetas de eventos se generan dinámicamente con JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <img src="img/cinta1.png" alt="imagen" class="separador" id="services-section">
-    <section id="seccion_servicios">
-        <div class="servicios">
-            <div class="servicio" onclick="mostrarInformacion('servicio1')">
-                <img src="img/servicio1.png" alt="servicio 1">
-            </div>
-            <div class="servicio" onclick="mostrarInformacion('servicio2')">
-                <img src="img/servicio2.png" alt="servicio 2">
-            </div>
-            <div class="servicio" onclick="mostrarInformacion('servicio3')">
-                <img src="img/servicio3.png" alt="servicio 3">
-            </div>
-            <div class="servicio" onclick="mostrarInformacion('servicio4')">
-                <img src="img/servicio4.png" alt="servicio 4">
-            </div>
-        </div>
-
-        <div class="informacion" id="servicio1">
-            <h2>Gestión Empresarial y de Gobierno</h2>
-            <p>Soluciones tecnológicas alineadas a las principales tendencias internacionales en este ámbito y el
-                desarrollo de la industria 4.0.</p>
-        </div>
-
-        <div class="informacion" id="servicio2">
-            <h2>Gobierno electrónico</h2>
-            <p>Desoft provee soluciones tecnológicas que facilitan el intercambio gobierno-ciudadano, contribuyendo al
-                acceso oportuno e inclusivo a la información.</p>
-        </div>
-
-        <div class="informacion" id="servicio3">
-            <h2>Servicios sobre plataformas digitales</h2>
-            <p>Soluciones tecnológicas para el posicionamiento del Cliente en entornos digitales y el desarrollo del
-                marketing digital.</p>
-        </div>
-
-        <div class="informacion" id="servicio4">
-            <h2>Proyectos de informatización</h2>
-            <p>DESOFT participa en Proyectos de Informatización aportando herramientas esenciales para el avance de la
-                sociedad cubana y el bienestar ciudadano.</p>
-        </div>
-
-        <div class="formulario">
-            <h2>Solicitar Servicio</h2>
-            <form onsubmit="enviarSolicitud(); return false;" class="form">
-                <div class="flex-item">
-                    <label for="servicio">Selecciona un servicio:</label>
-                    <select id="servicio" name="servicio">
-                        <option value="servicio1">Gestión Empresarial y de Gobierno</option>
-                        <option value="servicio2">Gobierno electrónico</option>
-                        <option value="servicio3">Servicios sobre plataformas digitales</option>
-                        <option value="servicio4">Proyectos de informatización</option>
-                    </select>
-                </div>
-                <div class="flex-item">
-                    <label for="correo">Correo electrónico:</label>
-                    <input type="email" id="correo" name="correo" required>
-                </div>
-                <div class="flex-item text-area">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" required></textarea>
-                </div>
-                <button type="submit">Enviar Solicitud</button>
-            </form>
-        </div>
-    </section>
-
-    <section id="atencion_cliente">
-        <form id="formularioAtencion" class="flex-container-column" onsubmit="enviarSolicitud2(); return false;">
-            <h2 class="flex-item">Formulario de Atención al Ciudadano</h2>
-
-            <div class="flex-item flex-container-row">
-                <label for="fechaPlanteamiento">Fecha del Planteamiento</label>
-                <input type="date" id="fechaPlanteamiento" name="fechaPlanteamiento" required><br>
-            </div>
-            <div class="flex-item flex-container-row">
-                <label for="tipoPlanteamiento">Tipo de Planteamiento</label>
-                <select id="tipoPlanteamiento" name="tipoPlanteamiento" onchange="mostrarCampos()">
-                    <option value="comentario">Comentario</option>
-                    <option value="queja">Queja</option>
-                </select><br>
-            </div>
-            <div id="camposComentario" class="flex-item">
-                <div class="text-area">
-                    <label for="comentario">Comentario</label>
-                    <textarea id="comentario" name="comentario"></textarea><br>
-                </div>
-            </div>
-            <div id="camposQueja" class="flex-item flex-container-column">
-                <div class="flex-item flex-container-row">
-                    <label for="tipoQueja">Tipo de Queja</label>
-                    <select id="tipoQueja" name="tipoQueja" onchange="mostrarCampos2()">
-                        <option value="personal">Personal</option>
-                        <option value="anonima">Anónima</option>
-                    </select><br>
-                </div>
-
-                <div class="flex-item flex-container-row">
-                    <label for="nombre">Nombre y Apellidos</label>
-                    <input type="text" id="nombre" name="nombre"><br>
-                </div>
-
-                <div class="flex-item flex-container-row">
-                    <label for="direccion">Dirección Particular</label>
-                    <input type="text" id="direccion" name="direccion"><br>
-                </div>
-
-                <div class="flex-item flex-container-row">
-                    <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" name="email"><br>
-                </div>
-
-                <div class="flex-item flex-container-row">
-                    <label for="telefono">Teléfono de Contacto</label>
-                    <input type="tel" id="telefono" name="telefono"><br>
-                </div>
-                <div class="text-area flex-item">
-                    <label for="planteamiento">Planteamiento</label>
-                    <textarea id="planteamiento" name="planteamiento"></textarea><br>
-                </div>
-            </div>
-            <button type="submit" class="flex-item">Enviar</button>
-        </form>
-    </section>
-
-    <img src="img/cinta3.png" alt="20 años" class="separador">
-
-    <footer>
-        <p>Ultima Actualización: 28 de diciembre del 2023</p>
-
-        <h3>Redes Sociales</h3>
-        <div class="redes_sociales">
-            <a href="https://www.facebook.com/DesoftCuba" class="red_social"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/desoft_empresa" class="red_social"><i class="fab fa-twitter"> </i></a>
-            <a href="https://www.instagram.com/desoftempresa/" class="red_social"><i
-                    class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/channel/UCJV9sKqZCYxAlFNpmzBvE9A" class="red_social"><i
-                    class="fab fa-youtube"></i></a>
-        </div>
-
-        <h3>Contacto</h3>
-        <div class="contacto">
-            <p><i class="fas fa-envelope"></i> negocios@desoft.cu</p>
-            <p><i class="fas fa-phone"></i> (+53)78383084</p>
-            <br>
-        </div>
-        <p>Desoft © 2023 Todos los derechos reservados</p>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="productos.js"></script>
-    <script src="eventos.js"></script>
 </body>
-
 </html>

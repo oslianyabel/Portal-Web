@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Institucional</title>
+    <link rel="stylesheet" href="font-awesome/css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            background: #007bff;
+            background: linear-gradient(to right, #0062E6, #33AEFF);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container px-5 my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card border-0 rounded-3 shadow-lg">
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <div class="h1 fw-light">Nuevo Producto</div>
+                            <p class="mb-4 text-muted">Rellene los campos del nuevo producto que va a exportar</p>
+                        </div>
+
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+                            <!-- Name Input -->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Name"
+                                    data-sb-validations="required" />
+                                <label for="name">Nombre</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">El nombre es obligatorio</div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="precio" type="email" placeholder="Email Address"
+                                    data-sb-validations="required,email" />
+                                <label for="precio">Precio</label>
+                                <div class="invalid-feedback" data-sb-feedback="precio:required">El precio es obligatorio</div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="descripcion" type="text" placeholder="Descripcion" style="height: 10rem;"
+                                    data-sb-validations="required"></textarea>
+                                <label for="descripcion">Descripcion</label>
+                                <div class="invalid-feedback" data-sb-feedback="descripcion:required">Descripcion es requerida
+                                </div>
+                            </div>
+
+                            <!-- Submit success message -->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Producto creado correctamente</div>
+                                </div>
+                            </div>
+
+                            <!-- Submit error message -->
+                            <div class="d-none" id="submitErrorMessage">
+                                <div class="text-center text-danger mb-3">Error al crear el producto</div>
+                            </div>
+
+                            <!-- Submit button -->
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-lg disabled" id="submitButton"
+                                    type="submit">Submit</button>
+                            </div>
+                        </form>
+                        <!-- End of contact form -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CDN Link to SB Forms Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

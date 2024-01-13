@@ -1,0 +1,40 @@
+{
+  "productos": [
+    {
+      "titulo": "WSUS",
+      "descripcion": "Desoft ofrece servicios para la puesta en marcha en una organizacion del Windows Server Update Service, WSUS, el cual provee actualizaciones de seguridad para los sistemas operativos Microsoft.",
+      "precio": "$19.99",
+      "categoria": "seguridad"
+    },
+    {
+      "titulo": "Supervisa",
+      "descripcion": "Aplicacion web que permite la planificacion de las reuniones y el control del estado de cumplimiento de cada uno de los acuerdos tomados. ",
+      "precio": "$24.99",
+      "categoria": "estrategia"
+    },
+    {
+      "titulo": "Versige",
+      "descripcion": "Sistema Generador de Ficheros para la exportacion en ficheros XML de los modelos establecidos para los Estados Financieros.",
+      "precio": "$29.99",
+      "categoria": "economia"
+    },
+    {
+      "titulo": "Pagus",
+      "descripcion": "Sistema de Nomina capaz de asimilar una amplia gama de sistemas de pago, configurables de acuerdo a la forma de pago de cada cliente y segun sus necesidades. ",
+      "precio": "$14.99",
+      "categoria": "capital_humano"
+    },
+    {
+      "titulo": "MyRos",
+      "descripcion": "Gestiona la contratacion, permitiendo realizar el control de las regulaciones en las relaciones contractuales que se establecen en la economia nacional.",
+      "precio": "$34.99",
+      "categoria": "informacion"
+    },
+    {
+      "titulo": "Plataforma ROIC",
+      "descripcion": "Gestion de objetos interconectados para implementacion de proyectos de IoT o Industria 4.0 para la optimizacion de procesos empresariales.",
+      "precio": "$39.99",
+      "categoria": "integral"
+    }
+  ]
+}

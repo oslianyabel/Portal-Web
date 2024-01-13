@@ -55,12 +55,6 @@
         "categoria": "economia"
       },
       {
-        "titulo": "Fastos",
-        "descripcion": "Sistema para la seleccion y evaluacion del personal que facilita la evaluacion de los rasgos psicologicos del candidato y permite su seleccion automatica a partir de un perfil definido.",
-        "precio": "$14.99",
-        "categoria": "capital_humano"
-      },
-      {
         "titulo": "OpenDM",
         "descripcion": "La aplicacion OpenDM ha sido desarrollada para las entidades importadoras/exportadoras de mercancia y permite gestionar la declaracion de mercancias (comerciales, transito y transferencia) ",
         "precio": "$34.99",

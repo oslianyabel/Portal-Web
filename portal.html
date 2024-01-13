@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Institucional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="font-awesome/css/all.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav id="nav-bar" class="contraido">
+        <img src="img/logo_navbar.svg" alt="Logo de Desoft">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Escribe algo...">
+            <button class="boton" onclick="search()" id="boton_busqueda">Buscar</button>
+        </div>
+        <ul>
+            <li class="nav_li"><a href="#carouselExampleCaptions"><i class="fas fa-home"> Portada</i> </a></li>
+            <li class="nav_li"><a href="#products_section"><i class="fas fa-box"> Productos</i> </a></li>
+            <li class="nav_li"><a href="#"><i class="fas fa-users"> Personal</i> </a></li>
+            <li class="nav_li"><a href="#marcador-eventos"><i class="far fa-calendar-alt"> Eventos</i> </a></li>
+            <li class="nav_li"><a href="#marcador-atencion"><i class="fas fa-headset"> Ayuda</i> </a></li>
+            <li class="nav_li"><a href="#"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a></li>
+        </ul>
+    </nav>
+    <div class="fas fa-bars" id="barras"></div>
+
+    <header>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/imagen9.jpg" alt="imagen">
+                    <div class="carousel-caption">
+                        <h5>Intranet-Dteam</h5>
+                        <p>División Territorial Sancti Spíritus</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/imagen12.jpg" alt="imagen">
+                    <div class="carousel-caption">
+                        <h5>Atención al Cliente</h5>
+                        <p>Háganos saber cualquier inquietud que se le presente mediante el servicio de atención al
+                            ciudadano</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/imagen13.jpg" alt="imagen">
+                    <div class="carousel-caption">
+                        <h5>Servicios de Informática</h5>
+                        <p>Consulte la sección de servicios y solicite el que necesite completando el formulario</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+
+    <div id="descargas">
+        <button onclick="dossier()"> <i class="fas fa-download"> Dossier Corporativo</i> </button>
+        <button onclick="marco()"> <i class="fas fa-download"> Marco Normativo</i> </button>
+        <button onclick="gaceta()"> <i class="fas fa-link"> Gaceta oficial</i> </button>
+    </div>
+
+    <section id="products_section">
+        <div class="title">
+            <h2>Productos</h2>
+        </div>
+        <button id="boton-add-product" class="boton" onclick="agregarProducto()">Agregar Producto</button>
+        <div id="productos">
+            <!-- Los productos se generan dinámicamente con JavaScript -->
+        </div>
+        <div class="pagination" id="pagination-products">
+            <!-- Números de página se generan dinámicamente con JavaScript -->
+        </div>
+    </section>
+
+    <section class="qualities-section" id="qualities-section">
+        <div class="quality-box">
+            <i class="fas fa-clock quality-image"></i>
+            <b>Desarrollo Agil</b>
+            <p>Nos adaptamos a los cambios y somos estrictos con los tiempos de entrega</p>
+        </div>
+
+        <div class="quality-box">
+            <i class="fas fa-user-tie quality-image"></i>
+            <b>Personal Profesional</b>
+            <p>Tenemos un equipo multidisciplinario con probada experiencia y certificaciones de estudios universitarios</p>
+        </div>
+
+        <div class="quality-box">
+            <i class="fas fa-gem quality-image"></i>
+            <b>Aplicaciones de Calidad</b>
+            <p>Nos complace entregar productos de calidad y damos nuestro mejor esfuerzo en hacerlo</p>
+        </div>
+
+        <div class="quality-box">
+            <i class="fas fa-comments quality-image"></i>
+            <b>Intercamnio con el Cliente</b>
+            <p>Siempre es bueno tener estrecha comunicacion con el cliente para lograr el resultado esperado</p>
+        </div>
+
+        <div class="quality-box">
+            <i class="fas fa-code quality-image"></i>
+            <b>Software Personalizados</b>
+            <p>Tenemos en cuenta cada detalle, creamos herramientas acordes a cualquier gusto o necesidad</p>
+        </div>
+
+        <div class="quality-box">
+            <i class="fas fa-cogs quality-image"></i>
+            <b>Brindamos Soporte</b>
+            <p>Luego de terminado un proyecto seguimos en contacto para ofrecer soporte tecnico en caso de ser necesario</p>
+        </div>
+
+        <div id="marcador-eventos"></div>
+    </section>
+
+    <section id="seccion_eventos">
+        <div id="eventos">
+            <i class="fas fa-arrow-left flecha" id="flecha-izquierda"></i>
+            <h2>Eventos</h2>
+            <i class="fas fa-arrow-right flecha" id="flecha-derecha"></i>
+        </div>
+        <div class="event-section">
+            <div class="event-cards" id="event-cards">
+                <!-- Tarjetas de eventos se generan dinámicamente con JavaScript -->
+            </div>
+            <div class="pagination" id="pagination">
+                <!-- Números de página se generan dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section class="qualities-section2" id="qualities-section2">
+        <div class="quality-box">
+            <img class="quality-image" src="img/servicio1.png" alt="servicio 1">
+            <b>Gestión Empresarial y de Gobierno</b>
+            <p>Soluciones tecnológicas alineadas a las principales tendencias internacionales en este ámbito y el
+                desarrollo de la industria 4.0.</p>
+        </div>
+
+        <div class="quality-box">
+            <img class="quality-image" src="img/servicio2.png" alt="servicio 2">
+            <b>Gobierno electrónico</b>
+            <p>Desoft provee soluciones tecnológicas que facilitan el intercambio gobierno-ciudadano, contribuyendo al
+                acceso oportuno e inclusivo a la información.</p>
+        </div>
+
+        <div class="quality-box">
+            <img class="quality-image" src="img/servicio3.png" alt="servicio 3">
+            <b>Servicios sobre plataformas digitales</b>
+            <p>Soluciones tecnológicas para el posicionamiento del Cliente en entornos digitales y el desarrollo del
+                marketing digital.</p>
+        </div>
+
+        <div class="quality-box">
+            <img class="quality-image" src="img/servicio4.png" alt="servicio 4">
+            <b>Proyectos de informatización</b>
+            <div id="marcador-atencion"></div>
+            <p>DESOFT participa en Proyectos de Informatización aportando herramientas esenciales para el avance de la
+                sociedad cubana y el bienestar ciudadano.</p>
+        </div>
+    </section>
+
+    <section id="atencion_cliente">
+        <form id="formularioAtencion" class="flex-container-column" onsubmit="enviarSolicitud2(); return false;">
+            <h2 class="flex-item">Atención al Cliente</h2>
+
+            <div class="flex-item flex-container-row">
+                <label for="fechaPlanteamiento">Fecha del Planteamiento</label>
+                <input type="date" id="fechaPlanteamiento" name="fechaPlanteamiento" required><br>
+            </div>
+            <div class="flex-item flex-container-row">
+                <label for="tipoPlanteamiento">Tipo de Planteamiento</label>
+                <select id="tipoPlanteamiento" name="tipoPlanteamiento" onchange="mostrarCampos()">
+                    <option value="comentario">Comentario</option>
+                    <option value="queja">Queja</option>
+                </select><br>
+            </div>
+            <div id="camposComentario" class="flex-item">
+                <div class="text-area">
+                    <label for="comentario">Comentario</label>
+                    <textarea id="comentario" name="comentario"></textarea><br>
+                </div>
+            </div>
+            <div id="camposQueja" class="flex-item flex-container-column">
+                <div class="flex-item flex-container-row">
+                    <label for="tipoQueja">Tipo de Queja</label>
+                    <select id="tipoQueja" name="tipoQueja" onchange="mostrarCampos2()">
+                        <option value="personal">Personal</option>
+                        <option value="anonima">Anónima</option>
+                    </select><br>
+                </div>
+
+                <div class="flex-item flex-container-row">
+                    <label for="nombre">Nombre y Apellidos</label>
+                    <input type="text" id="nombre" name="nombre"><br>
+                </div>
+
+                <div class="flex-item flex-container-row">
+                    <label for="direccion">Dirección Particular</label>
+                    <input type="text" id="direccion" name="direccion"><br>
+                </div>
+
+                <div class="flex-item flex-container-row">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email"><br>
+                </div>
+
+                <div class="flex-item flex-container-row">
+                    <label for="telefono">Teléfono de Contacto</label>
+                    <input type="tel" id="telefono" name="telefono"><br>
+                </div>
+                <div class="text-area flex-item">
+                    <label for="planteamiento">Planteamiento</label>
+                    <textarea id="planteamiento" name="planteamiento"></textarea><br>
+                </div>
+            </div>
+            <button class="boton" type="submit" class="flex-item">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Ultima Actualización: 28 de diciembre del 2023</p>
+
+        <h3>Redes Sociales</h3>
+        <div class="redes_sociales">
+            <a href="https://www.facebook.com/DesoftCuba" class="red_social"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/desoft_empresa" class="red_social"><i class="fab fa-twitter"> </i></a>
+            <a href="https://www.instagram.com/desoftempresa/" class="red_social"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCJV9sKqZCYxAlFNpmzBvE9A" class="red_social"><i
+                    class="fab fa-youtube"></i></a>
+        </div>
+
+        <h3>Contacto</h3>
+        <div class="contacto">
+            <p><i class="fas fa-envelope"></i> negocios@desoft.cu</p>
+            <p><i class="fas fa-phone"></i> (+53)78383084</p>
+            <br>
+        </div>
+        <p>DTeam © 2024 Todos los derechos reservados</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/eventos.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
